@@ -5,7 +5,7 @@ private class EmailSenderSchedulableTest {
         test.startTest();
         EmailSenderSchedulable testClass = new EmailSenderSchedulable();
         String chron = '0 59 23 * * ?';
-//        System.schedule('Test ', chron, testClass);
+        System.schedule('Test ', chron, testClass);
         test.stopTest();
     }
     

@@ -48,10 +48,10 @@ public class ShowroomTriggerHandler {
       }
          }
    
-    @future
+    @future(callout=true)
     public static void sendRequest(Set<Id> caseIds){
         
-        List<Case> caseList = [SELECT Id, Subject  FROM Case WHERE Showroom__r.Status__c = 'Close' AND Subject='Renovation Case' AND Id IN :caseIds];
+        List<Case> caseList = [SELECT Id,  Showroom__c, Status  FROM Case WHERE Showroom__r.Status__c = 'Close'  AND Id IN :caseIds];
         
         for(Case c :caseList) {
         

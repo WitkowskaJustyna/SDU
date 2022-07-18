@@ -51,5 +51,18 @@ public class TestDataFactory {
                            );
         return user;
     }
+     public static Case getRenovationCase(Showroom__c showroom){
+        
+        Case newCase =  new Case(Subject=('Renovation Case' + showroom.Showroom_Name__c), Showroom__c = showroom.Id);
+        
+        return newCase;
+    }
+    public static Showroom__c getShowroomWithStatus(Account account, String showroomName, String status){
+        
+        Showroom__c showroom = new  Showroom__c (Type__c = 'personal cars', Account__c = account.Id, Showroom_Name__c = showroomName, Status__c = status);
+        return showroom;
+        
+    } 
+    
          
  }
